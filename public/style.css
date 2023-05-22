@@ -1,0 +1,468 @@
+/*--------------------------------------------------------------
+# VARIABLES
+--------------------------------------------------------------*/
+
+:root {
+  --c-body-text-color: #ffffff;
+
+  --c-dark-grey-bg: #242529;
+  --c-area-bg: #36383e;
+
+  --c-player-cards: #6f6f6f;
+  --c-player-cards-text: #fff;
+  --c-female-gender: #f476ff;
+  --c-male-gender: #76c6ff;
+
+  --c-blocks-input: #ff4b4b;
+  --c-turnovers-input: #ecd45e;
+  --c-goals-input: #4ed19d;
+  --c-assists-input: #9570cf;
+
+  --c-score-green: #37c356;
+  --c-score-light-green: #5dff81;
+  --c-score-red: #c91e1e;
+  --c-score-light-red: #ff4d4d;
+
+  --c-button-border: #efffad;
+
+  --c-live-button: #ff1a1a;
+
+  --br-areas: 10px;
+  --br-card: 10px 10px 2px 2px;
+  --br-gender: 0px 0px 2px 2px;
+}
+
+/*--------------------------------------------------------------
+  # FONTS
+  --------------------------------------------------------------*/
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url(../fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url(../fonts/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Inter-Regular";
+  src: url(../fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Inter-SemiBold";
+  src: url(../fonts/Inter-SemiBold.ttf);
+}
+
+/*--------------------------------------------------------------
+  # GLOBALS
+  --------------------------------------------------------------*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--c-dark-grey-bg);
+  color: var(--c-body-text-color);
+  font-family: "Inter-Regular";
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 5% 32% 25% 32%;
+  grid-template-rows: 1.2fr 0.8fr 1fr 1fr;
+  gap: 1.5rem;
+  grid-template-areas:
+    "sidebar players-team-one live-score players-team-two"
+    "sidebar players-team-one score-history players-team-two"
+    "sidebar players-team-one score-history players-team-two"
+    "sidebar players-team-one score-history players-team-two";
+}
+
+/*--------------------------------------------------------------
+  # SIDEBAR
+  --------------------------------------------------------------*/
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  grid-area: sidebar;
+  border-radius: 0 10px 10px 0;
+  background-color: var(--c-area-bg);
+}
+
+.sidebar img {
+  margin-bottom: 2rem;
+}
+
+#toggle {
+  background-color: var(--br-card);
+  border: none;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+#toggle:hover {
+  scale: 0.9;
+}
+
+/*--------------------------------------------------------------
+  # LIVE SCORE
+  --------------------------------------------------------------*/
+
+.live-score-area {
+  grid-area: live-score;
+  margin-top: 1.5rem;
+  background-color: var(--c-area-bg);
+  color: var(--c-player-cards-text);
+  position: relative;
+  border-radius: var(--br-areas);
+}
+
+.live-score-titles h2 {
+  font-family: "Montserrat-Medium";
+  font-size: 1.4rem;
+  padding-left: 0.8rem;
+  padding-top: 0.5rem;
+}
+
+.live-score-titles h3 {
+  font-size: 1.2rem;
+  font-family: "Inter-Regular";
+  font-weight: 300;
+  padding-left: 0.8rem;
+}
+
+.live-button {
+  background-color: var(--c-live-button);
+  width: fit-content;
+  font-family: "Inter-SemiBold";
+  border-radius: var(--br-areas);
+  padding: 0.2rem 0.5rem;
+  position: absolute;
+  font-size: 0.8rem;
+  top: 0.5rem;
+  right: 0.8rem;
+  box-shadow: 3px 3px 3px var(--c-dark-grey-bg);
+  animation: breath 2s infinite;
+}
+
+.live-score {
+  padding: 0.3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.live-score img {
+  width: 6.25rem;
+  height: auto;
+  object-fit: cover;
+}
+
+.live-score-team-names {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1.8rem;
+  padding-right: 1.8rem;
+}
+
+.live-score-team-names h4 {
+  font-family: "Inter-Regular";
+  font-weight: 500;
+}
+
+/*--------------------------------------------------------------
+  # SCORE HISTORY
+  --------------------------------------------------------------*/
+
+.score-history {
+  grid-area: score-history;
+  background-color: var(--c-area-bg);
+  border-radius: var(--br-areas);
+  margin-bottom: 1.5rem;
+}
+
+.input-buttons {
+  margin: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-buttons button {
+  font-family: "Montserrat-SemiBold";
+  border-radius: var(--br-areas);
+  padding: 0.2rem 0.4rem;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.input-buttons button:hover {
+  scale: 1.05;
+}
+
+.input-goals-button {
+  background-color: var(--c-goals-input);
+  color: var(--c-body-text-color);
+}
+
+.input-assists-button {
+  background-color: var(--c-assists-input);
+  color: var(--c-body-text-color);
+}
+
+.input-blocks-button {
+  background-color: var(--c-blocks-input);
+  color: var(--c-body-text-color);
+}
+
+.input-turnovers-button {
+  background-color: var(--c-turnovers-input);
+  color: var(--c-body-text-color);
+}
+
+.team-scored-total {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+}
+
+.team-scored-left {
+  margin: 0 0 0 0.8rem;
+}
+
+#score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-scored-right {
+  margin: 0 0.8rem 0 0;
+}
+
+table {
+  font-family: "Montserrat-Medium";
+}
+
+th {
+  width: 2.8rem;
+}
+
+thead {
+  color: var(--c-player-cards-text);
+}
+
+.red {
+  background-color: var(--c-score-light-red);
+}
+
+.green {
+  background-color: var(--c-score-light-green);
+}
+
+.dark-red {
+  background-color: var(--c-score-red);
+}
+
+.dark-green {
+  background-color: var(--c-score-green);
+}
+
+/*--------------------------------------------------------------
+  # PLAYER AREA
+  --------------------------------------------------------------*/
+
+.players-team-one {
+  font-family: "Montserrat-Medium";
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+  border-radius: var(--br-areas);
+  grid-area: players-team-one;
+  background-color: var(--c-area-bg);
+  overflow: auto;
+}
+
+.players-team-one h2,
+.players-team-two h2 {
+  color: var(--c-player-cards-text);
+  margin-top: 0.8rem;
+  margin-left: 1.25rem;
+}
+
+.cards {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.bullet {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  z-index: 1;
+  margin-left: 3rem;
+  height: 100%;
+  margin-top: -1.2rem;
+  text-align: center;
+  font-size: smaller;
+}
+
+.score-bullet {
+  background-color: var(--c-goals-input);
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  z-index: 1;
+}
+
+.assist-bullet {
+  background-color: var(--c-assists-input);
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  z-index: 1;
+}
+
+.block-bullet {
+  background-color: var(--c-blocks-input);
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  z-index: 1;
+}
+
+.turnover-bullet {
+  background-color: var(--c-turnovers-input);
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  z-index: 1;
+}
+
+/* .score-bullet-no,
+.assist-bullet-no,
+.block-bullet-no,
+.turnover-bullet-no {
+  display: none;
+} */
+
+.card-player {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--c-player-cards);
+  border-radius: var(--br-card);
+  width: 115px;
+  height: 50px;
+  margin: 0.5rem;
+}
+
+.card-player p {
+  overflow-wrap: break-word;
+  width: 25%;
+  text-align: center;
+}
+
+.card-player h4 {
+  width: 75%;
+  text-align: center;
+}
+
+#m {
+  position: absolute;
+  align-self: flex-end;
+  background-color: var(--c-male-gender);
+  border-radius: var(--br-gender);
+  width: 100%;
+  height: 4px;
+}
+
+#f {
+  position: absolute;
+  align-self: flex-end;
+  background-color: var(--c-female-gender);
+  border-radius: var(--br-gender);
+  width: 100%;
+  height: 4px;
+}
+
+.players-team-two {
+  font-family: "Montserrat-Medium";
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  margin-right: 1.5rem;
+  border-radius: var(--br-areas);
+  grid-area: players-team-two;
+  background-color: var(--c-area-bg);
+  overflow: auto;
+}
+
+/*--------------------------------------------------------------
+  # ANIMATIONS
+  --------------------------------------------------------------*/
+
+@keyframes breath {
+  50% {
+    scale: 1.1;
+  }
+}
+
+/*--------------------------------------------------------------
+  # Ligth-mode
+  --------------------------------------------------------------*/
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --c-dark-grey-bg: #c7c7c7;
+    --c-area-bg: #eaeaea;
+    /* --c-body-text-color: #6f6f6f; */
+    --c-player-cards: #6f6f6f;
+  }
+  .live-score-titles,
+  .live-score,
+  .live-score-team-names,
+  .input-turnovers-button,
+  .players-team-one h2,
+  .players-team-two h2 {
+    color: black;
+  }
+
+  thead {
+    color: black;
+  }
+}
+
+.light {
+  --c-dark-grey-bg: #c7c7c7;
+  --c-area-bg: #eaeaea;
+  /* --c-body-text-color: #6f6f6f; */
+  --c-player-cards: #6f6f6f;
+  --c-player-cards-text: #000000;
+}

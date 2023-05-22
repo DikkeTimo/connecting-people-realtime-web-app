@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UltiTV // Commentary</title>
+    <link rel="stylesheet" href="/stylepost.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+
+<aside class="sidebar">
+  <a href="/">
+    <img id="home" width="50px" height="50px" src="assets/homebutton.svg" alt="">
+  </a>
+  <button id="toggle">
+    <img id="contrast" width="50px" height="50px" src="assets/contrast.svg" alt="">
+  </button>
+</aside>
+
+<section class="form-area">
+<form id="post" action="/form" method="post" name="newPlayer">
+<h2>Add-Player</h2>
+
+  <label for="id">Id:</label>
+  <input type="text" name="id" placeholder="..." />
+
+  <label for="name">Name:</label>
+  <input
+    type="text"
+    name="name"
+    placeholder="..."
+    value="<%= locals.values?.name ?? '' %>"
+  />
+
+  <label for="name">Gender:</label>
+  <input type="text" name="gender" placeholder="..." />
+
+  <label for="name">JerseyNumber:</label>
+  <input type="number" min="1" max="100" name="jerseyNumber" placeholder="..." />
+
+  <label for="name">Team:</label>
+  <input type="text" name="team" placeholder="..." />
+
+  <label>
+    Questions:
+    <select name="question">
+      <option disabled selected>--- Select ---</option>
+      <% data5.questions.forEach(answer => { %>
+      <option value="<%= answer.id %>"><%= answer.title %></option>
+      <% }) %>
+    </select>
+  </label>
+  <label>
+    Answer:
+    <input type="text" name="content" class="answer-input" value="<%= locals.values?.content ?? ''%>" />
+  </label>
+
+  <input id="submit" type="submit" value="Submit" />
+</form>
+</section>
+
+<%- include('./partials/foot.ejs') %>
