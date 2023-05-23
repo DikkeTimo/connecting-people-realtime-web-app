@@ -1,6 +1,7 @@
 // Import the required modules
 import express from "express";
 import https from "https";
+const io = require('socket.io')(server);
 
 // Create a new Express app
 const app = express();
