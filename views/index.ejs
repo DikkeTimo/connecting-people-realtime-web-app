@@ -222,21 +222,20 @@
     <% data1.team1Players.forEach(players => { %>
     <div class="card-player">
       <div class="bullet">
-        <% data2.scoredPoints.forEach(score => { %>
-          <% if (players.playerId === score.scoredBy) { %>
-            <div class="score-bullet">1</div>
+          <% let goals =  data2.scoredPoints.filter(stats => stats.scoredBy === players.playerId).length %>
+          <% if (goals > 0) { %>
+            <div class="score-bullet"> <%- goals %></div>
           <% } else { %>
             <div class="score-bullet-no"></div>
           <% } %>
-        <% }) %>
 
-        <% data2.scoredPoints.forEach(score=> { %>
-           <% if (players.playerId===score.assistBy) { %>
-              <div class="assist-bullet">1</div>
+   
+          <% let assist = data2.scoredPoints.filter(stats => stats.assistBy === players.playerId).length %>
+           <% if (assist > 0) { %>
+              <div class="assist-bullet"><%- assist %></div>
             <% } else { %>
               <div class="assist-bullet-no"></div>
             <% } %>
-        <% }) %>
 
         <% data2.scoredPoints.forEach(score=> { %>
           <% score.blockPlayers.forEach(blockPlayer=> { %>
@@ -274,21 +273,19 @@
     <% data1.team2Players.forEach(players => { %>
     <div class="card-player">
       <div class="bullet">
-        <% data2.scoredPoints.forEach(score => { %>
-          <% if (players.playerId === score.scoredBy) { %>
-            <div class="score-bullet">1</div>
-          <% } else { %>
-            <div class="score-bullet-no"></div>
-          <% } %>
-        <% }) %>
+        <% let goals =  data2.scoredPoints.filter(stats => stats.scoredBy === players.playerId).length %>
+        <% if (goals > 0) { %>
+          <div class="score-bullet"> <%- goals %></div>
+        <% } else { %>
+          <div class="score-bullet-no"></div>
+        <% } %>
 
-        <% data2.scoredPoints.forEach(score=> { %>
-           <% if (players.playerId===score.assistBy) { %>
-              <div class="assist-bullet">1</div>
-            <% } else { %>
-              <div class="assist-bullet-no"></div>
-            <% } %>
-        <% }) %>
+        <% let assist = data2.scoredPoints.filter(stats => stats.assistBy === players.playerId).length %>
+        <% if (assist > 0) { %>
+           <div class="assist-bullet"><%- assist %></div>
+         <% } else { %>
+           <div class="assist-bullet-no"></div>
+         <% } %>
 
         <% data2.scoredPoints.forEach(score=> { %>
           <% score.blockPlayers.forEach(blockPlayer=> { %>

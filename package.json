@@ -1,5 +1,5 @@
 {
-  "name": "performance-matters-optimized-website",
+  "name": "connecting-people-realtime-web-app",
   "version": "1.0.0",
   "description": "> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)",
   "main": "index.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SanHont/performance-matters-optimized-website.git"
+    "url": "git+https://github.com/SanHont/connecting-people-realtime-web-app"
   },
   "author": "Sander & Tim",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SanHont/performance-matters-optimized-website/issues"
+    "url": "https://github.com/SanHont/connecting-people-realtime-web-app/issues"
   },
-  "homepage": "https://github.com/SanHont/performance-matters-optimized-website#readme",
+  "homepage": "https://github.com/SanHont/connecting-people-realtime-web-app#readme",
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",

@@ -271,6 +271,11 @@ th {
   width: 2.8rem;
 }
 
+td {
+  padding: 3px 0;
+}
+
+
 thead {
   color: var(--c-player-cards-text);
 }
@@ -314,21 +319,19 @@ thead {
 }
 
 .cards {
-  position: relative;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   margin: 0.8rem;
-  flex-wrap: wrap;
 }
 
 .bullet {
   display: flex;
-  justify-content: flex-end;
   position: absolute;
   z-index: 1;
-  margin-left: 3rem;
+  margin-left: 18rem;
   height: 100%;
-  margin-top: -1.2rem;
   text-align: center;
   font-size: smaller;
 }
@@ -365,13 +368,6 @@ thead {
   z-index: 1;
 }
 
-/* .score-bullet-no,
-.assist-bullet-no,
-.block-bullet-no,
-.turnover-bullet-no {
-  display: none;
-} */
-
 .card-player {
   position: relative;
   display: flex;
@@ -379,9 +375,9 @@ thead {
   align-items: center;
   background-color: var(--c-player-cards);
   border-radius: var(--br-card);
-  width: 115px;
-  height: 50px;
-  margin: 0.5rem;
+  width: 90%;
+  height: 25px;
+  margin: 0.3rem;
 }
 
 .card-player p {
@@ -392,7 +388,7 @@ thead {
 
 .card-player h4 {
   width: 75%;
-  text-align: center;
+  text-align: left;
 }
 
 #m {
