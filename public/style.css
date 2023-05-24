@@ -385,11 +385,13 @@ thead {
   overflow-wrap: break-word;
   width: 25%;
   text-align: center;
+  font-weight: 900;
 }
 
 .card-player h4 {
   width: 75%;
   text-align: left;
+  font-weight: 400;
 }
 
 #m {
