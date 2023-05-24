@@ -172,6 +172,10 @@ body {
   font-size: 2rem;
 }
 
+.live-score h3 {
+  display: flex;
+}
+
 .live-score img {
   width: 6.25rem;
   height: auto;
@@ -205,6 +209,7 @@ body {
   margin: 0.8rem;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .input-buttons button {
@@ -215,6 +220,14 @@ body {
   font-size: 1.1rem;
   cursor: pointer;
   transition: 0.2s;
+}
+
+#scoreForm {
+  visibility: hidden;
+}
+
+#scoreForm.show {
+  visibility: visible;
 }
 
 .input-buttons button:hover {
@@ -331,7 +344,7 @@ thead {
   align-items: center;
   position: absolute;
   z-index: 1;
-  margin-left: 18rem;
+  margin-left: 80%;
   height: 100%;
   text-align: center;
   font-size: smaller;

@@ -44,8 +44,6 @@ ioServer.on("connection", (client) => {
     const homeScore = data.homeScore;
     const awayScore = data.awayScore;
     
-    // Perform necessary operations with the scores
-    
     // Broadcast the updated scores to all connected clients
     client.emit('scoreUpdated', { homeScore, awayScore });
   });

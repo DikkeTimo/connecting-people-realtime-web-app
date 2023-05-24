@@ -1,5 +1,14 @@
 let darkToggle = document.getElementById("toggle");
 let isLight = localStorage.getItem("isLight") === "true";
+let socket = io();
+const form = document.getElementById("scoreForm");
+
+let buttonn = document.querySelector(".input-goals-button");
+let thisform = document.getElementById("scoreForm");
+
+buttonn.addEventListener("click", () => {
+  thisform.classList.toggle("show");
+});
 
 if (isLight) {
   document.body.classList.add("light");
@@ -9,9 +18,6 @@ darkToggle.addEventListener("click", () => {
   document.body.classList.toggle("light");
   localStorage.setItem("isLight", document.body.classList.contains("light"));
 });
-
-let socket = io();
-const form = document.getElementById("scoreForm");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent form submission from reloading the page

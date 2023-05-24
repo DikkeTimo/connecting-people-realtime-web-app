@@ -23,9 +23,6 @@
     </div>
     <div class="live-score">
       <img src="assets/ultitvlogohome.svg" />
-      <!-- <h3>
-        <%= data2.team1Score %> - <%= data2.team2Score %>
-      </h3> -->
       <h3>
         <p id="homeScoreDisplay"></p> - <p id="awayScoreDisplay"></p>
       </h3>
@@ -44,18 +41,16 @@
   <section class="score-history">
     <section class="score-history">
       <div class="input-buttons">
-        <div class="goals-container">
-          <button class="input-goals-button">Goals</button>
-            <form id="scoreForm">
-              <input type="number" name="hometeam" placeholder="hometeam" autocomplete="off" >
-              <input type="number" name="pretendteam" placeholder="pretendteam" autocomplete="off" >
-              <input type="submit" name="" id="" autocomplete="off">
-            </form>
-        </div>
+        <button class="input-goals-button">Goals</button>
         <button class="input-assists-button">Assists</button>
         <button class="input-blocks-button">Blocks</button>
         <button class="input-turnovers-button">Turnovers</button>
       </div>
+      <form id="scoreForm">
+        <input type="number" name="hometeam" placeholder="hometeam" autocomplete="off" >
+        <input type="number" name="pretendteam" placeholder="pretendteam" autocomplete="off" >
+        <input type="submit" name="" id="" autocomplete="off">
+      </form>
       <div class="team-scored-total">
         <div class="team-scored-left">
           <table cellspacing="0" cellpadding="0">
