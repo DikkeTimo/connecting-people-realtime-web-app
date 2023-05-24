@@ -328,6 +328,7 @@ thead {
 
 .bullet {
   display: flex;
+  align-items: center;
   position: absolute;
   z-index: 1;
   margin-left: 18rem;
