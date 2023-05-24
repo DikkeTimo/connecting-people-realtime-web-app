@@ -1,7 +1,5 @@
 // Import the required modules
 import express from "express";
-import https from "https";
-const io = require('socket.io')(server);
 
 // Create a new Express app
 const app = express();
@@ -9,7 +7,6 @@ const app = express();
 const url = ["https://raw.githubusercontent.com/fdnd-agency/ultitv/main/ultitv-api"];
 const postUrl = "https://api.ultitv.fdnd.nl/api/v1/players?first=20";
 const apiUrl = "https://api.ultitv.fdnd.nl/api/v1/questions";
-
 const urls = [
   [url] + "/game/943.json",
   [url] + "/game/943/statistics.json",
@@ -34,6 +31,7 @@ app.get("/", async function (request, response) {
 
   response.render("index", data);
 });
+
 
 app.get("/post", async function (request, response) {
   const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));

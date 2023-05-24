@@ -9,3 +9,6 @@ darkToggle.addEventListener("click", () => {
   document.body.classList.toggle("light");
   localStorage.setItem("isLight", document.body.classList.contains("light"));
 });
+
+
+let socket = io();
