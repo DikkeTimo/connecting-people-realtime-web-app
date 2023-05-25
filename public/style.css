@@ -22,6 +22,7 @@
   --c-score-light-green: #5dff81;
   --c-score-red: #c91e1e;
   --c-score-light-red: #ff4d4d;
+  --c-middle-score: #fff;
 
   --c-button-border: #efffad;
 
@@ -208,7 +209,7 @@ body {
 .input-buttons {
   margin: 0.8rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -223,11 +224,11 @@ body {
 }
 
 #scoreForm {
-  visibility: hidden;
+  display: none;
 }
 
 #scoreForm.show {
-  visibility: visible;
+  display: block;
 }
 
 .input-buttons button:hover {
@@ -236,29 +237,29 @@ body {
 
 .input-goals-button {
   background-color: var(--c-goals-input);
-  color: var(--c-body-text-color);
+  color: #242529;
 }
 
 .input-assists-button {
   background-color: var(--c-assists-input);
-  color: var(--c-body-text-color);
+  color: #242529;
 }
 
 .input-blocks-button {
   background-color: var(--c-blocks-input);
-  color: var(--c-body-text-color);
+  color: #242529;
 }
 
 .input-turnovers-button {
   background-color: var(--c-turnovers-input);
-  color: var(--c-body-text-color);
+  color: #242529;
 }
 
 .team-scored-total {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   text-align: center;
-  width: 100%;
 }
 
 .team-scored-left {
@@ -288,17 +289,18 @@ td {
   padding: 3px 0;
 }
 
-
 thead {
   color: var(--c-player-cards-text);
 }
 
 .red {
   background-color: var(--c-score-light-red);
+  color: #242529;
 }
 
 .green {
   background-color: var(--c-score-light-green);
+  color: #242529;
 }
 
 .dark-red {
@@ -307,8 +309,12 @@ thead {
 
 .dark-green {
   background-color: var(--c-score-green);
+  color: #242529;
 }
 
+.middle td {
+  color: var(--c-middle-score);
+}
 /*--------------------------------------------------------------
   # PLAYER AREA
   --------------------------------------------------------------*/
@@ -352,6 +358,7 @@ thead {
 
 .score-bullet {
   background-color: var(--c-goals-input);
+  color: #242529;
   border-radius: 50%;
   height: 15px;
   width: 15px;
@@ -368,6 +375,7 @@ thead {
 
 .block-bullet {
   background-color: var(--c-blocks-input);
+  color: #242529;
   border-radius: 50%;
   height: 15px;
   width: 15px;
@@ -376,6 +384,7 @@ thead {
 
 .turnover-bullet {
   background-color: var(--c-turnovers-input);
+  color: #242529;
   border-radius: 50%;
   height: 15px;
   width: 15px;
@@ -477,4 +486,5 @@ thead {
   /* --c-body-text-color: #6f6f6f; */
   --c-player-cards: #6f6f6f;
   --c-player-cards-text: #000000;
+  --c-middle-score: #000000;
 }

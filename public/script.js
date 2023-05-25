@@ -24,7 +24,6 @@ form.addEventListener("submit", function (event) {
 
   const homeScore = document.querySelector('input[name="hometeam"]').value;
   const awayScore = document.querySelector('input[name="pretendteam"]').value;
-
   // Send the updated scores to the server via Socket.IO
   socket.emit("updateScore", { homeScore, awayScore });
 });

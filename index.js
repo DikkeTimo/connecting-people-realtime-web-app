@@ -32,6 +32,9 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from the public directory
 app.use(express.static("public"));
 
+let homeScore = 0;
+let awayScore = 0;
+
 ioServer.on("connection", (client) => {
   console.log(`user ${client.id} connected`);
 
@@ -41,8 +44,11 @@ ioServer.on("connection", (client) => {
 
   client.on('updateScore', function(data) {
     // Update the scores here
-    const homeScore = data.homeScore;
-    const awayScore = data.awayScore;
+    const homeScoreChange = parseInt(data.homeScore);
+    const awayScoreChange = parseInt(data.awayScore);
+
+    homeScore += homeScoreChange;
+    awayScore += awayScoreChange;
     
     // Broadcast the updated scores to all connected clients
     client.emit('scoreUpdated', { homeScore, awayScore });
