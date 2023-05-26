@@ -223,6 +223,10 @@ body {
   transition: 0.2s;
 }
 
+input {
+  width: 100%;
+}
+
 #scoreForm {
   display: none;
 }

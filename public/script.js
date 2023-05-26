@@ -1,3 +1,5 @@
+alert("Welcome to this live dashboard");
+
 let darkToggle = document.getElementById("toggle");
 let isLight = localStorage.getItem("isLight") === "true";
 let socket = io();
