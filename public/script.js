@@ -1,4 +1,4 @@
-alert("Welcome to this live dashboard");
+// alert("Welcome to this live dashboard");
 
 let darkToggle = document.getElementById("toggle");
 let isLight = localStorage.getItem("isLight") === "true";
@@ -26,6 +26,10 @@ form.addEventListener("submit", function (event) {
 
   const homeScore = document.querySelector('input[name="hometeam"]').value;
   const awayScore = document.querySelector('input[name="pretendteam"]').value;
+
+  console.log(homeScore);
+  console.log(awayScore);
+
   // Send the updated scores to the server via Socket.IO
   socket.emit("updateScore", { homeScore, awayScore });
 });
@@ -37,4 +41,20 @@ socket.on("scoreUpdated", function (data) {
   // Update the score display elements
   homeScoreDisplay.textContent = data.homeScore;
   awayScoreDisplay.textContent = data.awayScore;
+});
+
+const cardArea = document.querySelectorAll(".cards");
+const playerArea = document.querySelectorAll(".card-player");
+const btnScale = document.getElementById("scale");
+
+console.log(playerArea);
+
+btnScale.addEventListener("click", () => {
+  cardArea.forEach((toggle) => {
+    toggle.classList.toggle("scalecardArea");
+  });
+
+  playerArea.forEach((element) => {
+    element.classList.toggle("scalecardplayer");
+  });
 });

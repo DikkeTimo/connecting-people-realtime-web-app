@@ -124,6 +124,12 @@ body {
   scale: 0.9;
 }
 
+#scale {
+  background-color: var(--br-card);
+  border: none;
+  cursor: pointer;
+}
+
 /*--------------------------------------------------------------
   # LIVE SCORE
   --------------------------------------------------------------*/
@@ -379,7 +385,7 @@ thead {
 
 .block-bullet {
   background-color: var(--c-blocks-input);
-  color: #242529;
+  color: #fff;
   border-radius: 50%;
   height: 15px;
   width: 15px;
@@ -405,6 +411,36 @@ thead {
   width: 90%;
   height: 25px;
   margin: 0.3rem;
+}
+
+.scalecardplayer {
+  width: 80%;
+  height: 20px;
+  margin: 0.1rem;
+}
+
+.scalecardplayer h4,
+.scalecardplayer p {
+  font-size: small;
+}
+
+.scalecardplayer {
+  .bullet {
+    font-size: 10px;
+  }
+  .score-bullet,
+  .assist-bullet,
+  .block-bullet,
+  .turnover-bullet {
+    height: 10px;
+    width: 10px;
+  }
+}
+
+.scalecardArea {
+  display: flex;
+  align-items: center;
+  overflow: scroll;
 }
 
 .card-player p {

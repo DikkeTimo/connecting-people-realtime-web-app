@@ -12,7 +12,7 @@ const ioServer = new Server(http);
 const port = process.env.PORT || 4242;
 
 const url = ["https://raw.githubusercontent.com/fdnd-agency/ultitv/main/ultitv-api"];
-const postUrl = "https://api.ultitv.fdnd.nl/api/v1/players?first=20";
+const postUrl = "https://api.ultitv.fdnd.nl/api/v1/players?first=100";
 const apiUrl = "https://api.ultitv.fdnd.nl/api/v1/questions";
 const urls = [
   [url] + "/game/943.json",
@@ -32,8 +32,6 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from the public directory
 app.use(express.static("public"));
 
-let homeScore = 0;
-let awayScore = 0;
 
 ioServer.on("connection", (client) => {
   console.log(`user ${client.id} connected`);
