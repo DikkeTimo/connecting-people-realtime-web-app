@@ -109,6 +109,13 @@ body {
   background-color: var(--c-area-bg);
 }
 
+.sidebar-logo{
+  width: 70px;
+  position: absolute;
+  top: 0.3rem;
+  left: 0.3rem;
+}
+
 .sidebar img,
 .sidebar svg {
   margin-bottom: 2rem;

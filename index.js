@@ -34,17 +34,17 @@ app.use(express.static("public"));
 
 ioServer.on("connection", (client) => {
   console.log(`user ${client.id} connected`);
-  let homeScore = 0;
-  let awayScore = 0;
-
+  
   client.on("disconnect", () => {
     console.log("User disconnected");
   });
-
+  
   client.on("updateScore", function (data) {
     // Update the scores here
     const homeScoreChange = parseInt(data.homeScore);
     const awayScoreChange = parseInt(data.awayScore);
+    let homeScore = 0;
+    let awayScore = 0;
 
     homeScore += homeScoreChange;
     awayScore += awayScoreChange;
