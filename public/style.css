@@ -109,27 +109,24 @@ body {
   background-color: var(--c-area-bg);
 }
 
-.sidebar img {
+.sidebar img,
+.sidebar svg {
   margin-bottom: 2rem;
+  stroke: var(--c-middle-score);
 }
 
-#toggle {
+#toggle,
+#scale {
   background-color: var(--br-card);
   border: none;
   cursor: pointer;
   transition-duration: 0.5s;
 }
 
-#toggle:hover {
+#toggle:hover,
+#scale:hover {
   scale: 0.9;
 }
-
-#scale {
-  background-color: var(--br-card);
-  border: none;
-  cursor: pointer;
-}
-
 /*--------------------------------------------------------------
   # LIVE SCORE
   --------------------------------------------------------------*/
@@ -527,4 +524,25 @@ thead {
   --c-player-cards: #6f6f6f;
   --c-player-cards-text: #000000;
   --c-middle-score: #000000;
+}
+
+@media (max-width: 1000px) {
+  aside img {
+    width: 20px;
+  }
+
+  .live-button h2 {
+    font-size: smaller;
+  }
+
+  .live-score img {
+    width: 50px;
+  }
+
+  .team-scored-total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

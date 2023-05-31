@@ -28,7 +28,6 @@ form.addEventListener("submit", function (event) {
   const awayScore = document.querySelector('input[name="pretendteam"]').value;
 
   console.log(homeScore);
-  console.log(awayScore);
 
   // Send the updated scores to the server via Socket.IO
   socket.emit("updateScore", { homeScore, awayScore });
