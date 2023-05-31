@@ -31,11 +31,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from the public directory
 app.use(express.static("public"));
-let homeScore = 0;
-let awayScore = 0;
 
 ioServer.on("connection", (client) => {
   console.log(`user ${client.id} connected`);
+  let homeScore = 0;
+  let awayScore = 0;
 
   client.on("disconnect", () => {
     console.log("User disconnected");
