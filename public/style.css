@@ -412,6 +412,7 @@ thead {
 
 .scalecardplayer {
   width: 90%;
+
   height: 20px;
   margin: 0.1rem;
 }
@@ -437,7 +438,7 @@ thead {
 .scalecardArea {
   display: flex;
   align-items: center;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .card-player p {
