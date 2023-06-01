@@ -29,7 +29,7 @@ De website is bedoelt voor de commentatoren om de scores door te kunnen geven, s
 
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
 
-Het project is gemaakt Nodejs, Express en EJS. De pagina is ingedeeld met een grid om alles mooi te positioneren. De afbeeldingen hebben een lazy loading om de snelheid optimaal te houden.
+Het project is gemaakt Nodejs, Express en EJS. De pagina is ingedeeld met een grid om alles mooi te positioneren. Op het dashboard kan je nu een live score invullen zodat je het aantal punten kan bij houden. Dit is mogelijk gemaakt met socket.io 
 
 <h3>Tools:</h3>
 <li>🖥️ Visual Studio Code</li>
@@ -41,6 +41,7 @@ Het project is gemaakt Nodejs, Express en EJS. De pagina is ingedeeld met een gr
 <li>🎨 CSS</li>
 <li>🕹️ JavaScript</li>
 <li>🥜 Node</li>
+<li>🖥️ Socket.io</li>
 
 ## Installatie
 
