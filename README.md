@@ -20,6 +20,7 @@
 
 <img width="70%" src='public/assets/screenhome.png'>
 <img width="60%" alt="Scherm­afbeelding 2023-06-01 om 09 32 12" src="https://github.com/SanHont/connecting-people-realtime-web-app/assets/62908209/e95817e4-51d0-4814-af57-40986a3b036c">
+<img width="60%" alt="Scherm­afbeelding 2023-06-01 om 09 55 13" src="https://github.com/SanHont/connecting-people-realtime-web-app/assets/62908209/f3e16675-8a55-4157-b2ee-2815646a1cea">
 
 ## Gebruik
 
