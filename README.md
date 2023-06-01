@@ -52,6 +52,9 @@ Om dit project te gebruiken kun je dit forken en openen met vs code, in de termi
 
 ## Bronnen
 
+<li>socket.io</li>
+<li>chatgpt</li>
+
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
